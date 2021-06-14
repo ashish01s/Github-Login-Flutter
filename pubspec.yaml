@@ -1,6 +1,6 @@
 name: github_login
 description: This flutter plugin simplify Github login process. All you need to just enter Github OAuth credentials and get token.
-version: 0.0.1
+version: 0.0.2
 homepage: http://io8.xyz/github_login_flutter
 repository: https://github.com/ashish01s/Github-Login-Flutter.git
 
