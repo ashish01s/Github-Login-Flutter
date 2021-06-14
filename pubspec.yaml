@@ -1,7 +1,8 @@
 name: github_login
 description: Plugin for github login
 version: 0.0.1
-homepage:http://io8.xyz/github_login_flutter
+homepage: http://io8.xyz/github_login_flutter
+repository: https://github.com/ashish01s/Github-Login-Flutter.git
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
