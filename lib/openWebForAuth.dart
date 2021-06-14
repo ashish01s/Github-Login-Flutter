@@ -8,14 +8,17 @@ import 'package:webview_flutter/webview_flutter.dart';
 class OpenWebForAuth extends StatefulWidget {
   final clientId;
   final callBackUrl;
-  const OpenWebForAuth({Key key, this.clientId, this.callBackUrl}) : super(key: key);
+
+  const OpenWebForAuth({Key key, this.clientId, this.callBackUrl})
+      : super(key: key);
+
   @override
   _OpenWebForAuthState createState() => _OpenWebForAuthState();
 }
 
 class _OpenWebForAuthState extends State<OpenWebForAuth> {
   final Completer<WebViewController> _controller =
-  Completer<WebViewController>();
+      Completer<WebViewController>();
 
   @override
   void initState() {
@@ -31,14 +34,18 @@ class _OpenWebForAuthState extends State<OpenWebForAuth> {
       ),
       body: Builder(builder: (BuildContext context) {
         return WebView(
-          initialUrl: 'https://github.com/login/oauth/authorize?client_id=${widget.clientId}',
+          initialUrl:
+              'https://github.com/login/oauth/authorize?client_id=${widget.clientId}',
           javascriptMode: JavascriptMode.unrestricted,
           onWebViewCreated: (WebViewController webViewController) {
             _controller.complete(webViewController);
           },
           onPageStarted: (String url) {
-            if(url.startsWith(widget.callBackUrl)){
-              Navigator.pop(context, url.toString().substring(url.lastIndexOf("=")+1),);
+            if (url.startsWith(widget.callBackUrl)) {
+              Navigator.pop(
+                context,
+                url.toString().substring(url.lastIndexOf("=") + 1),
+              );
             }
           },
           gestureNavigationEnabled: true,
@@ -46,6 +53,4 @@ class _OpenWebForAuthState extends State<OpenWebForAuth> {
       }),
     );
   }
-
-
 }

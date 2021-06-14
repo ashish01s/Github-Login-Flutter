@@ -19,7 +19,6 @@ class _MyAppState extends State<MyApp> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,12 +37,11 @@ class _MyAppState extends State<MyApp> {
                 ),
                 onPressed: () async {
                   GithubLogin user = new GithubLogin();
-                  String token = await user.getToken(context: context,
-                      clientId: "d47afe4e85df71a19d3b",
-                      clientSecret: "c4310739ee29e0b99e4f2ddf6409860b988bcba4",
-                      callBackUrl
-                          :"https://webs-01s.firebaseapp.com");
-                  print("TOKEN FROM PLUGIN ::: $token");
+                  String token = await user.getToken(
+                      context: context,
+                      clientId: "ClientID",
+                      clientSecret: "ClientSecret",
+                      callBackUrl: "https://example.com");
                 },
               )
             ],
